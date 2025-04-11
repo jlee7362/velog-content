@@ -14,5 +14,5 @@ jobs:
       - name: Use velog-actions
         uses: sabeurthabti/velog-actions@v1.1.0
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_PAT2 }}
           directory: posts
