@@ -21,4 +21,4 @@ jobs:
         run: npm install -g velog-client
 
       - name: Deploy posts to Velog
-        run: velog-client publish ./posts --token ${{ secrets.GH_PAT }}
+        run: velog-client publish ./posts --token ${{ secrets.GH_PAT2 }}
