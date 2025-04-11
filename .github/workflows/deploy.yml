@@ -17,9 +17,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install velog-client
+      - name: Install velog-client globally
+        run: npm install -g velog-client
 
       - name: Deploy posts to Velog
-        run: |
-          npx velog-client publish ./posts --token ${{ secrets.GH_PAT }}
+        run: velog-client publish ./posts --token ${{ secrets.GH_PAT }}
