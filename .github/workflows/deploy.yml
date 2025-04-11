@@ -1,24 +1,18 @@
-name: 📦 Deploy to Velog
+name: 🚀 Publish to Velog
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Use velog-actions
+        uses: sabeurthabti/velog-actions@v1.1.0
         with:
-          node-version: '18'
-
-      - name: Install velog-client globally
-        run: npm install -g velog-client
-
-      - name: Deploy posts to Velog
-        run: velog-client publish ./posts --token ${{ secrets.GH_PAT2 }}
+          token: ${{ secrets.GH_PAT2 }}
+          directory: posts
